@@ -143,6 +143,9 @@ def main():
             webinterface_port = "10070"
         else:
             webinterface_port = master["webinterface_port"]
+        dot_env = open(".env", 'w')
+        dot_env.write(f"WEBIF_PORT={str(webinterface_port)}")
+        dot_env.close()
         if "listen_address" in master:
             listen_address = master["listen_address"]
         else:
